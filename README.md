@@ -1,6 +1,6 @@
 # News Scraper & React Frontend
 
-This repository contains a **news scraping and summarization** script (`news_scraper.py`) and a **React frontend** that displays categorized news articles by fetching data via an AWS-based backend.
+This repository contains a **news scraping and summarization** script (`news_scrapper.ipynb`) and a **React frontend** that displays categorized news articles by fetching data via an AWS-based backend.
 
 ## 🔗 Connection Flow
 1️⃣ **React Frontend (VSCode)**  
@@ -32,17 +32,17 @@ This repository contains a **news scraping and summarization** script (`news_scr
 ## 📂 Project Structure
 ```
 📁 news-scraper-project/
-│── 📁 frontend/          # React frontend
-│   ├── src/             # React source code
-│   ├── package.json     # React dependencies
-│   ├── ...
-│
-│── 📁 backend/          # Backend (AWS Lambda & MongoDB)
-│   ├── news_scraper.py  # Web scraping & summarization script
-│   ├── lambda_handler.py # AWS Lambda function
-│   ├── server.js        # Express.js server for handling API requests
-│
-│── README.md            # Project Documentation
+|— 📁 frontend/          # React frontend
+|   ├— src/             # React source code
+|   ├— package.json     # React dependencies
+|   └— ...
+|
+|— 📁 backend/          # Backend (AWS Lambda & MongoDB)
+|   ├— news_scrapper.ipynb  # Web scraping & summarization script (Jupyter Notebook)
+|   ├— lambda_handler.py # AWS Lambda function
+|   ├— server.js        # Express.js server for handling API requests
+|
+|— README.md            # Project Documentation
 ```
 
 ---
@@ -51,12 +51,9 @@ This repository contains a **news scraping and summarization** script (`news_scr
 
 ### 1️⃣ Running the News Scraper
 #### Steps:
-1. Open `news_scraper.py`.
+1. Open `news_scrapper.ipynb` in Jupyter Notebook.
 2. Update it with the desired city/category filters.
-3. Run the script:
-   ```bash
-   python news_scraper.py
-   ```
+3. Run the notebook cells sequentially.
 4. The scraped news will be stored in MongoDB.
 
 ---
@@ -119,11 +116,10 @@ If you are using `server.js` for API handling instead of AWS Lambda, follow thes
 
 ---
 
-## 🔧 Customization
-- **Modify `news_scraper.py`** to scrape news from different sources or summarize based on different criteria.
+## 🛠 Customization
+- **Modify `news_scrapper.ipynb`** to scrape news from different sources or summarize based on different criteria.
 - **Adjust MongoDB queries** in `lambda_handler.py` to refine the filtering logic.
 - **Update API Gateway URL** in the React frontend (`src/config.js` or similar) to match your deployment.
 
 ---
-
 
