@@ -1,141 +1,70 @@
-# News Scraper & React Frontend
+# Getting Started with Create React App
 
-This repository contains a **news scraping and summarization** script (`news_scraper.py`) and a **React frontend** that displays categorized news articles by fetching data via an AWS-based backend.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## 🔗 Connection Flow
-1️⃣ **React Frontend (VSCode)**  
-- Runs on your local machine.
-- Calls the AWS API Gateway URL to fetch categorized news (e.g., `https://isegp27f20.execute-api.eu-north-1.amazonaws.com/news?category=politics`).
+## Available Scripts
 
-2️⃣ **AWS API Gateway**  
-- Receives the request from React.
-- Forwards it to the AWS Lambda function.
+In the project directory, you can run:
 
-3️⃣ **AWS Lambda (Backend Logic)**  
-- Extracts the requested category from the query parameters.
-- Queries MongoDB for matching news.
+### `npm start`
 
-4️⃣ **MongoDB (news_database)**  
-- Stores the news data.
-- Returns matching documents (or an empty list `[]` if no matches are found).
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-5️⃣ **AWS Lambda Response**  
-- Converts the MongoDB query result into a JSON response.
-- Sends it back to React via API Gateway.
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-6️⃣ **React UI Updates**  
-- Receives the JSON response.
-- Updates the UI with the fetched news articles.
+### `npm test`
 
----
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-## 📂 Project Structure
-```
-📁 news-scraper-project/
-│── 📁 frontend/          # React frontend
-│   ├── src/             # React source code
-│   ├── package.json     # React dependencies
-│   ├── ...
-│
-│── 📁 backend/          # Backend (AWS Lambda & MongoDB)
-│   ├── news_scraper.py  # Web scraping & summarization script
-│   ├── lambda_handler.py # AWS Lambda function
-│   ├── server.js        # Express.js server for handling API requests
-│
-│── requirements.txt     # Python dependencies
-│── README.md            # Project Documentation
-```
+### `npm run build`
 
----
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-## 🚀 How to Run the Project
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-### 1️⃣ Setting up the Backend
-#### Prerequisites:
-- **Python 3.x**
-- **MongoDB Atlas or Local MongoDB**
-- **AWS Lambda & API Gateway Setup**
-- **Required Python packages** (install using `pip`):
-  ```bash
-  pip install -r requirements.txt
-  ```
-- Ensure **PyTorch** is installed for `transformers`:
-  ```bash
-  pip install torch
-  ```
-  Or refer to [PyTorch installation guide](https://pytorch.org/get-started/) for specific OS installation.
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-#### Steps:
-1. Update `news_scraper.py` with the desired city/category filters.
-2. Deploy `lambda_handler.py` as an AWS Lambda function.
-3. Ensure API Gateway is correctly configured to forward requests to the Lambda function.
-4. Verify MongoDB is accessible and populated with news data.
+### `npm run eject`
 
-![AWS Lambda Function Overview](attachment://image.png)
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
----
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-### 2️⃣ Running the Frontend
-#### Prerequisites:
-- **Node.js & npm installed**
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-#### Steps:
-1. Navigate to the `frontend/` directory.
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Start the React development server:
-   ```bash
-   npm start
-   ```
-4. Open `http://localhost:3000` in your browser.
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
----
+## Learn More
 
-### 3️⃣ Running the Backend Locally (Optional)
-If you are using `server.js` for API handling instead of AWS Lambda, follow these steps:
-1. Navigate to the `backend/` directory.
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. If dependencies are missing, install them manually:
-   ```bash
-   npm install express cors dotenv mongoose
-   ```
-4. Create a `.env` file in the `backend/` directory and add:
-   ```
-   MONGO_URI=mongodb+srv://your-mongo-url
-   PORT=5000
-   ```
-5. Start the server:
-   ```bash
-   node server.js
-   ```
-6. The API should now be available at `http://localhost:5000`.
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
----
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-## 🔧 Customization
-- **Modify `news_scraper.py`** to scrape news from different sources or summarize based on different criteria.
-- **Adjust MongoDB queries** in `lambda_handler.py` to refine the filtering logic.
-- **Update API Gateway URL** in the React frontend (`src/config.js` or similar) to match your deployment.
+### Code Splitting
 
----
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-## 🛠 Future Enhancements
-- Add support for multiple news sources.
-- Implement authentication for API requests.
-- Improve UI/UX with better filtering and sorting.
+### Analyzing the Bundle Size
 
----
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-## 📜 License
-This project is licensed under [MIT License](LICENSE).
+### Making a Progressive Web App
 
----
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-## 💡 Contributing
-Feel free to open issues and pull requests to enhance the project!
+### Advanced Configuration
 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
