@@ -1,0 +1,42 @@
+# requirements.txt
+
+# MongoDB and Database Interaction
+pymongo==4.6.1
+
+# Asynchronous Requests and Parsing
+asyncio
+nest_asyncio
+requests-html
+
+# URL Handling
+urllib3
+
+# XML Parsing
+xml
+
+# Text Processing
+newspaper3k
+
+# Transformers for NLP
+transformers
+
+# Additional
+regex
+
+# For Date and Time Operations
+datetime
+
+# To Handle Timing
+time
+
+# Install command (if using pip)
+# pip install pymongo requests-html newspaper3k transformers nest_asyncio regex
+
+# Additional Note:
+# Ensure you have PyTorch installed for Transformers:
+# pip install torch (or refer to https://pytorch.org/get-started/ for specific OS installation)
+
+# If you're using GPU, install the GPU version of PyTorch accordingly.
+
+# MongoDB must be installed and running locally or remotely.
+
